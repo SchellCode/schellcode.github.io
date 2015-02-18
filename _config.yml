@@ -1,3 +1,9 @@
+name: SchellCode
+description: "Code knowhow and stuff I've discovered"
+markdown: redcarpet
+highlighter: pygments
 pygments: true
-permalink: /:categories/:title/
 paginate: 5
+permalink: /:title
+rss-feed-limit: 10
+rss-show-full: "no"
