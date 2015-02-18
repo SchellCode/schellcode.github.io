@@ -1,0 +1,8 @@
+safe: true
+pygments: true
+markdown: redcarpet
+permalink: pretty
+title: SchellCode
+description: Code knowhow and stuff I've discovered
+url_root: http://schellcode.github.io
+author: Bernhard Schelling
