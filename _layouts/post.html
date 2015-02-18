@@ -1,0 +1,26 @@
+---
+---
+
+<!DOCTYPE html>
+<html>
+<head>
+	<link rel="stylesheet" href="/css/site.css">
+	<script src="/js/site.js"></script>
+	<title>
+	{% if page.title == "Home" %}
+		{{ site.title }} &middot; {{ site.tagline }}
+	{% else %}
+		{{ page.title }} &middot; {{ site.title }}
+	{% endif %}
+	</title>
+</head>
+<body>
+	<div class="container">
+		<article>
+			<h1><a href="{{ site.base_url }}{{ page.url }}">{{ page.title }}</a></h1>
+			<p>{{ page.date | date_to_string }}</p>
+			<p>{{ content }}</p>
+		</article>
+	</div>
+</body>
+</html>
