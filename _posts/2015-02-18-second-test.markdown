@@ -2,7 +2,6 @@
 layout: post
 title: "This is another test"
 comments: true
-permalink: short-urls-jekyll
 categories: a b
 ---
 
