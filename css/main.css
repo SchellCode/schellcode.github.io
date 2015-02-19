@@ -79,6 +79,28 @@ article p a {
 		border: 0;
 	}
 
+
+	article p a[href$=jpg], a[href$=jpeg], a[href$=jpe], a[href$=png], a[href$=gif] {
+		border: 0;
+	}
+
+	article p a[href$=jpg]:hover, a[href$=jpeg]:hover, a[href$=jpe]:hover, a[href$=png]:hover, a[href$=gif]:hover {
+		background: 0;
+	}
+
+	article p a img:hover { 
+		border-color: #2c3e50; 
+		box-shadow: 3px 3px 0 0 #a7adc4;
+	}
+
+	article img {
+		height: auto;
+		max-width: 100%;
+		border: 1px solid #777;
+		border-radius: 10px;
+		box-shadow: 2px 2px 0 0 #bbb;
+	}
+
 /* ------------------------------------------------------------------------
 -  The header (or the left side part of the page). -
 -------------------------------------------------------------------------*/
@@ -151,14 +173,6 @@ hr {
 	.main-content .module {
 		font-size: 0.8em;
 		margin-right: 1em;
-	}
-
-	.module img {
-		height: auto;
-		max-width: 100%;
-		border: 1px solid #777;
-		border-radius: 10px;
-		box-shadow: 2px 2px 0 0 #bbb;
 	}
 
 	nav.module { padding-top: 1.5em; }
