@@ -10,10 +10,19 @@ Second test
 code snippets?
 
 {% highlight c++ %}
-void main()
+int main()
 {
-	printf("Hello World\n");
+	const char* place = "World";
+	printf("Hello %s\n", place);
+	return 1;
 }
 {% endhighlight %}
+
+Image
+=====
+![Testing](/images/test.png)
+[![Testing][IMG1]][IMG1]
+
+  [IMG1]: /images/test.png "Testing Bottom"
 
 End of post
