@@ -5,7 +5,9 @@ comments: true
 categories: a b
 ---
 
+* auto-gen TOC:
 {:toc}
+(probably doesn't work either)
 
 Second test
 ===========
