@@ -101,6 +101,20 @@ article p a {
 		box-shadow: 2px 2px 0 0 #bbb;
 	}
 
+	article fieldset {
+		padding-top: 6px
+		width: 100%;
+		border: 1px solid #777;
+		border-radius: 10px;
+		box-shadow: 2px 2px 0 0 #bbb;
+	}
+
+	article fieldset img {
+		width: 100%;
+		border: 0;
+		box-shadow: 0 0 0 0;
+	}
+
 /* ------------------------------------------------------------------------
 -  The header (or the left side part of the page). -
 -------------------------------------------------------------------------*/

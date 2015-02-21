@@ -5,10 +5,6 @@ comments: true
 categories: a b
 ---
 
-* auto-gen TOC:
-{:toc}
-(probably doesn't work either)
-
 Second test
 ===========
 
@@ -23,11 +19,12 @@ int main()
 }
 {% endhighlight %}
 
+
 Image
 =====
 ![Testing](/images/test.png)
-[![Testing][IMG1]][IMG1]
 
+<fieldset><legend>Hello Test</legend>[![Testing][IMG1]][IMG1]</fieldset>
   [IMG1]: /images/test.png "Testing Bottom"
 
 
