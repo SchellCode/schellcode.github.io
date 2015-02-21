@@ -25,7 +25,8 @@ Image
 ![Testing](/images/test.png)
 
 <fieldset><legend>Hello Test</legend>
-[![Testing][IMG1]][IMG1]</fieldset>
+[![Testing][IMG1]][IMG1]
+</fieldset>
   [IMG1]: /images/test.png "Testing Bottom"
 
 
