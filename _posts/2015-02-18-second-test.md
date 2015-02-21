@@ -24,15 +24,13 @@ Image
 =====
 ![Testing](/images/test.png)
 
-<fieldset><legend>Hello Test</legend>
+<fieldset><legend>Hello Test</legend><a href="/images/test.png" title="Testing"><img src="/images/test.png" alt="Testing"></a></fieldset>
 
 [![Testing](/images/test.png "Testing Bottom")](/images/test.png)
 
+
 [![Testing][IMG1]][IMG1]
   [IMG1]: /images/test.png "Testing Bottom"
-
-</fieldset>
-
 
 Fieldset
 ========
