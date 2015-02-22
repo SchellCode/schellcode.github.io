@@ -1,8 +1,9 @@
 ---
 layout: post
 title: "This is another test"
-comments: true
+nocomments: true
 categories: a b
+published: false
 ---
 
 Second test
