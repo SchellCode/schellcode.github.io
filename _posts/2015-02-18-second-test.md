@@ -24,7 +24,8 @@ Image
 =====
 ![Testing](/images/test.png)
 
-<fieldset><legend>Hello Test</legend><a href="/images/test.png" title="Testing"><img src="/images/test.png" alt="Testing"></a></fieldset>
+<a href="/images/test.png" title="Testing Bottom"><img src="/images/test.png" alt="Testing"><legend>This is a test Image!</legend></a>
+Hello World! Hello World! Hello World! Hello World! Hello World! Hello World! Hello World! Hello World! Hello World!
 
 [![Testing](/images/test.png "Testing Bottom")](/images/test.png)
 

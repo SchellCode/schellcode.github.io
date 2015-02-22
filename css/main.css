@@ -43,9 +43,31 @@ p { line-height: 1.4; }
 .top { text-align: right; }
 .inside { padding-left: 15px; }
 
+/* ------------------------------------------------------------------------
+-  Pagination. -
+-------------------------------------------------------------------------*/
+
+.pagination { text-align: center; }
+	.pagination .page_number { color: #888; }
+	.pagination .nolink { color: #666; }
+
 
 /* ------------------------------------------------------------------------
--  The navigation. Main menu and article links. -
+-  Links (header). -
+-------------------------------------------------------------------------*/
+
+.links a {
+	color: #212121;
+	text-transform: lowercase;
+}
+
+	.links a:hover, .links a:active {
+		color: #212121;
+		text-decoration: underline;
+	}
+
+/* ------------------------------------------------------------------------
+-  The navigation. Main menu links. -
 -------------------------------------------------------------------------*/
 
 nav {
@@ -64,55 +86,6 @@ nav {
 		border: 0;
 		color: #f2f2f2 !important;
 		text-decoration: underline;
-	}
-
-
-article p a {
-	border-bottom: .125em solid #ccc;
-	display: inline;
-	padding: 0 0 .15em 0;
-}
-
-	article p a:hover, article p a:active {
-		color: #f2f2f2 !important;
-		background: #2c3e50;
-		border: 0;
-	}
-
-
-	article p a[href$=jpg], a[href$=jpeg], a[href$=jpe], a[href$=png], a[href$=gif] {
-		border: 0;
-	}
-
-	article p a[href$=jpg]:hover, a[href$=jpeg]:hover, a[href$=jpe]:hover, a[href$=png]:hover, a[href$=gif]:hover {
-		background: 0;
-	}
-
-	article p a img:hover { 
-		border-color: #2c3e50; 
-		box-shadow: 3px 3px 0 0 #a7adc4;
-	}
-
-	article img {
-		height: auto;
-		max-width: 100%;
-		border: 1px solid #777;
-		border-radius: 10px;
-		box-shadow: 2px 2px 0 0 #bbb;
-	}
-
-	article fieldset {
-		padding-top: 6px
-		width: 100%;
-		border: 1px solid #777;
-		border-radius: 10px;
-		box-shadow: 2px 2px 0 0 #bbb;
-	}
-
-	article fieldset img {
-		width: 100%;
-		border: 0;
-		box-shadow: 0 0 0 0;
 	}
 
 /* ------------------------------------------------------------------------
@@ -157,7 +130,6 @@ article p a {
 	.main-content a { color: #2c3e50; }
 	.main-content a:hover, .main-content a:focus { color: #2980b9; }
 
-
 .category {
 	color: #ccc;
 	position: absolute;
@@ -191,60 +163,57 @@ hr {
 
 	nav.module { padding-top: 1.5em; }
 
-
-/* ------------------------------------------------------------------------
--  Blockquote, code, pre. -
--------------------------------------------------------------------------*/
-
-pre, code {
-	font-size: 0.8em;
-	line-height: 1.5em;
-	padding: 0.4em;
+article a {
+	border-bottom: .125em solid #ccc;
+	display: inline;
+	padding: 0 0 .15em 0;
 }
 
-
-blockquote {
-	font-style: italic;
-	border-left: 5px solid #ccc;
-	margin: 1.5em 10px;
-	padding: 0.5em 5px;
-	quotes: "\201C""\201D""\2018""\2019";
-}
-
-	blockquote:before {
-		color: #ccc;
-		content: open-quote;
-		font-size: 4em;
-		line-height: 0.1em;
-		margin-right: 0.25em;
-		vertical-align: -0.4em;
+	article a:hover, article p a:active {
+		color: #f2f2f2 !important;
+		background: #2c3e50;
+		border: 0;
 	}
 
-	blockquote p { display: inline; }
-
-/* ------------------------------------------------------------------------
--  Pagination. -
--------------------------------------------------------------------------*/
-
-.pagination { text-align: center; }
-	.pagination .page_number { color: #888; }
-	.pagination .nolink { color: #666; }
-
-
-/* ------------------------------------------------------------------------
--  Links (header). -
--------------------------------------------------------------------------*/
-
-.links a {
-	color: #212121;
-	text-transform: lowercase;
-}
-
-	.links a:hover, .links a:active {
-		color: #212121;
-		text-decoration: underline;
+	article a[href$=jpg], a[href$=jpeg], a[href$=jpe], a[href$=png], a[href$=gif] {
+		border: 0;
 	}
 
+	article a[href$=jpg]:hover, a[href$=jpeg]:hover, a[href$=jpe]:hover, a[href$=png]:hover, a[href$=gif]:hover {
+		background: 0;
+	}
+
+	article img {
+		height: auto;
+		max-width: 100%;
+		max-height: 25em;
+		border: 1px solid #777;
+		border-radius: 10px;
+		box-shadow: 2px 2px 0 0 #bbb;
+		padding: 10px;
+		display: block;
+	}
+
+	article a img + legend {
+		padding: 0 0.5em;
+		background: #f2f2f2;
+		display: table;
+		position: relative;
+		top: -0.14em;
+		left: 1.8em;
+		height: 1.3em;
+		line-height: 0.35em;
+		color:#212121;
+	}
+
+	article a:hover img {
+		border-color: #269;
+		box-shadow: 3px 3px 0 0 #9ac;
+	}
+
+	article a:hover img + legend {
+		color: #269;
+	}
 
 /* ------------------------------------------------------------------------
 -  Tables -
@@ -266,7 +235,6 @@ table {
 	table thead tr { background: #f2f2f2 !important; }
 	table tr:nth-child(odd) { background: #f2f2f2; }
 	table tr:nth-child(even)  { background: #e1e1e1; }
-
 
 /* ------------------------------------------------------------------------
 -  Social share (end of the post). -
@@ -328,6 +296,35 @@ table {
 
 	.footer p { margin-top: 2px; }
 
+/* ------------------------------------------------------------------------
+-  Blockquote, code, pre. -
+-------------------------------------------------------------------------*/
+
+pre, code {
+	font-size: 0.8em;
+	line-height: 1.5em;
+	padding: 0.4em;
+}
+
+
+blockquote {
+	font-style: italic;
+	border-left: 5px solid #ccc;
+	margin: 1.5em 10px;
+	padding: 0.5em 5px;
+	quotes: "\201C""\201D""\2018""\2019";
+}
+
+	blockquote:before {
+		color: #ccc;
+		content: open-quote;
+		font-size: 4em;
+		line-height: 0.1em;
+		margin-right: 0.25em;
+		vertical-align: -0.4em;
+	}
+
+	blockquote p { display: inline; }
 
 /* ------------------------------------------------------------------------
 -  Make things responsive. -
