@@ -96,7 +96,7 @@ nav {
 
 	nav a:nth-child(2n) { margin: 5px; }
 
-	nav a:hover {
+	nav a:hover, nav a:active {
 		border: 0;
 		color: #f2f2f2 !important;
 		text-decoration: underline;
@@ -118,12 +118,13 @@ nav {
 		display: block;
 	}
 
-.links a {	
-	color: #212121;
+.links {
+	padding: 0;
+	background: #9AA5A6;
 }
 
 	.links a:hover, .links a:active {
-		color: #212121;
+		color: #f2f2f2 !important;
 		text-decoration: underline;
 	}
 
@@ -204,12 +205,12 @@ article a {
 		color:#212121;
 	}
 
-	article a:hover img {
+	article a:hover img, article a:focus img, article a:active img {
 		border-color: #269;
 		box-shadow: 3px 3px 0 0 #9ac;
 	}
 
-	article a:hover img + legend {
+	article a:hover img + legend, article a:focus img + legend, article a:active img + legend {
 		color: #269;
 	}
 
@@ -274,7 +275,7 @@ table {
 #disqus_thread:after { content: ''; display: block; margin-bottom: -60px; }
 #disqus_loadbtn { text-align:center; }
 #disqus_loadbtn input { padding: 5px; border-radius: 6px; border: 1px solid #000; cursor: pointer; color: #fff; background-color: #345; box-shadow: 3px 3px 0 0 #999; }
-#disqus_loadbtn input:hover { background-color: #567; }
+#disqus_loadbtn input:hover, #disqus_loadbtn input:focus, #disqus_loadbtn input:active { background-color: #567; }
 @media (max-width: 581px) { #disqus_thread:after { margin-bottom: -230px } }
 
 /* ------------------------------------------------------------------------

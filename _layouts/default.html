@@ -25,20 +25,22 @@
 
 		<nav class="module main-menu color-4">
 			<a href="/">Home</a>
+			<a href="https://github.com/SchellCode" title="Profile in Github" target="_blank">github</a>
+			<a href="https://plus.google.com/{{ site.google }}" title="Profile in Google+" target="_blank">Google+</a>
 {% comment %}
 			<a>Todo</a>
 			<a>More Pages</a>
 {% endcomment %}
 		</nav>
 
+{% comment %}
 		<div class="module links color-3">
 			<a href="https://twitter.com/B_Schelling" title="Profile in Twitter" target="_blank">twitter</a>
-{% comment %}
 			<a href="https://github.com/SchellCode" title="Profile in Github" target="_blank">github</a>
 			<a href="https://plus.google.com/{{ site.google }}" title="Profile in Google+" target="_blank">Google+</a>
-{% endcomment %}
 			<a href="/feed.xml" title="Suscribe to RSS" target="_blank">rss</a>
 		</div>
+{% endcomment %}
 
 		<div style="" class="module recent">Recent Posts:
 {% for post in site.posts limit:20 %}
