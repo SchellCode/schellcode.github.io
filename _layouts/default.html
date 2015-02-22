@@ -28,6 +28,14 @@
 			<a>More Pages</a>
 		</nav>
 
+{% unless page.title %}
+	<div style="" class="module recent">Recent Posts:
+	{% for post in site.posts limit:20 %}
+		<li><a href="{{ site.url }}{{ post.url }}" title="{{ post.title }}">{{ post.title }}</a></li>
+	{% endfor %}
+	</div>
+{% endunless %}
+
 {% comment %}
 		<div class="module links color-3">
 			<a href="https://github.com/{{ site.github }}" title="Profile in Github" target="_blank">github</a>

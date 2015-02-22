@@ -14,6 +14,7 @@
 .color-2 { background: #34495e; } /* Description background */
 .color-3 { background: #f2f2f2; } /* Modules background */
 .color-4 { background: #7f8c8d; } /* Main menu background */
+.color-5 { background: #7f8c8d; } /* Recent menu background */
 
 /* ------------------------------------------------------------------------
 -  The basics. -
@@ -38,46 +39,23 @@ p { line-height: 1.4; }
 .top { text-align: right; }
 .inside { padding-left: 15px; }
 
-/* ------------------------------------------------------------------------
--  Pagination. -
--------------------------------------------------------------------------*/
-.pagination { text-align: center; }
-	.pagination .page_number { color: #888; }
-	.pagination .nolink { color: #666; }
-
-/* ------------------------------------------------------------------------
--  Links (header). -
--------------------------------------------------------------------------*/
-.links a {
+.module {
 	color: #212121;
-	text-transform: lowercase;
+	margin: 0.5em;
+	overflow: hidden;
+	padding: 1.5em;
+	position: relative;
+	border: 1px solid black;
+	border-radius: 10px;
+	box-shadow: 3px 3px 0 0 #999;
 }
 
-	.links a:hover, .links a:active {
-		color: #212121;
-		text-decoration: underline;
+	.main-content .module {
+		font-size: 0.8em;
+		margin-right: 1em;
 	}
 
-/* ------------------------------------------------------------------------
--  The navigation. Main menu links. -
--------------------------------------------------------------------------*/
-nav {
-	font-size: 0.9em;
-	text-align: center;
-}
-
-	nav a {
-		padding: 0.3em;
-		text-transform: uppercase;
-	}
-
-	nav a:nth-child(2n) { margin: 5px; }
-
-	nav a:hover {
-		border: 0;
-		color: #f2f2f2 !important;
-		text-decoration: underline;
-	}
+	nav.module { padding-top: 1.5em; }
 
 /* ------------------------------------------------------------------------
 -  The header (or the left side part of the page). -
@@ -106,6 +84,61 @@ nav {
 .main-header .main-menu { padding: 0.1em; }
 
 /* ------------------------------------------------------------------------
+-  The navigation. Main menu links. -
+-------------------------------------------------------------------------*/
+nav {
+	font-size: 0.9em;
+	text-align: center;
+}
+
+	nav a {
+		padding: 0.3em;
+		text-transform: uppercase;
+	}
+
+	nav a:nth-child(2n) { margin: 5px; }
+
+	nav a:hover {
+		border: 0;
+		color: #f2f2f2 !important;
+		text-decoration: underline;
+	}
+
+.recent {
+	background: #9DA8A9;
+	text-align: left;
+	padding: 0.2em 0 0.3em 1.5em;
+	font-size: 80%
+	line-height: 1.4em;
+}
+
+	.recent a {
+		text-transform: none;
+		text-overflow: ellipsis;
+		width: 98%;
+		white-space: nowrap;
+		overflow: hidden;
+		display: block;
+	}
+
+.links a {	
+	color: #212121;
+	text-transform: lowercase;
+}
+
+	.links a:hover, .links a:active {
+		color: #212121;
+		text-decoration: underline;
+	}
+
+/* ------------------------------------------------------------------------
+-  Pagination. -
+-------------------------------------------------------------------------*/
+.pagination { text-align: center; }
+	.pagination .page_number { color: #888; }
+	.pagination .nolink { color: #666; }
+
+/* ------------------------------------------------------------------------
 -  The content. -
 -------------------------------------------------------------------------*/
 .main-content {
@@ -131,24 +164,6 @@ hr {
 	height: 1px;
 	margin: 50px 0;
 }
-
-.module {
-	color: #212121;
-	margin: 0.5em;
-	overflow: hidden;
-	padding: 1.5em;
-	position: relative;
-	border: 1px solid black;
-	border-radius: 10px;
-	box-shadow: 3px 3px 0 0 #999;
-}
-
-	.main-content .module {
-		font-size: 0.8em;
-		margin-right: 1em;
-	}
-
-	nav.module { padding-top: 1.5em; }
 
 article a {
 	border-bottom: .125em solid #ccc;
@@ -321,10 +336,13 @@ blockquote {
 
 	body { font-size: large; }
 
-	.main-header,
-	.main-content {
-		padding: 0.75em;
+	.main-header, .main-content {
+		padding: 0.5em;
 		width: 100%;
+	}
+
+	.main-header .description {
+		padding: 0.2em;
 	}
 
 	.main-header .module { margin-left: 0; }
