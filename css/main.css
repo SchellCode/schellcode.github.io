@@ -1,28 +1,23 @@
 /* ------------------------------------------------------------------------
 -   Make browsers more friendly with padding and margin. -
 -------------------------------------------------------------------------*/
-
 * {
 	-webkit-box-sizing: border-box;
 	-moz-box-sizing: border-box;
 	box-sizing: border-box;
 }
 
-
 /* ------------------------------------------------------------------------
 -  Main background colors. -
 -------------------------------------------------------------------------*/
-
 .color-1 { background: #2c3e50; } /* Title background */
 .color-2 { background: #34495e; } /* Description background */
 .color-3 { background: #f2f2f2; } /* Modules background */
 .color-4 { background: #7f8c8d; } /* Main menu background */
 
-
 /* ------------------------------------------------------------------------
 -  The basics. -
 -------------------------------------------------------------------------*/
-
 html, body {
 	background: #d1d1d1;
 	font-family: 'Open Sans', sans-serif;
@@ -46,16 +41,13 @@ p { line-height: 1.4; }
 /* ------------------------------------------------------------------------
 -  Pagination. -
 -------------------------------------------------------------------------*/
-
 .pagination { text-align: center; }
 	.pagination .page_number { color: #888; }
 	.pagination .nolink { color: #666; }
 
-
 /* ------------------------------------------------------------------------
 -  Links (header). -
 -------------------------------------------------------------------------*/
-
 .links a {
 	color: #212121;
 	text-transform: lowercase;
@@ -69,7 +61,6 @@ p { line-height: 1.4; }
 /* ------------------------------------------------------------------------
 -  The navigation. Main menu links. -
 -------------------------------------------------------------------------*/
-
 nav {
 	font-size: 0.9em;
 	text-align: center;
@@ -91,7 +82,6 @@ nav {
 /* ------------------------------------------------------------------------
 -  The header (or the left side part of the page). -
 -------------------------------------------------------------------------*/
-
 .main-header {
 	float: left;
 	font-weight: 300;
@@ -112,14 +102,12 @@ nav {
 
 	.main-header a:hover, .main-header a:focus { color: #e1e1e1; }
 
-
 .main-header .description { color: #e5e5e5; }
 .main-header .main-menu { padding: 0.1em; }
 
 /* ------------------------------------------------------------------------
 -  The content. -
 -------------------------------------------------------------------------*/
-
 .main-content {
 	float: right;
 	padding: 0;
@@ -136,7 +124,6 @@ nav {
 	right: 0.75em;
 	top: 0.75em;
 }
-
 
 hr {
 	border: 0;
@@ -218,7 +205,6 @@ article a {
 /* ------------------------------------------------------------------------
 -  Tables -
 -------------------------------------------------------------------------*/
-
 table {
 	border: 1px solid #999;
 	border-collapse: collapse;
@@ -239,7 +225,6 @@ table {
 /* ------------------------------------------------------------------------
 -  Social share (end of the post). -
 -------------------------------------------------------------------------*/
-
 .social {
 	padding: 0 !important;
 	text-align: right;
@@ -274,11 +259,15 @@ table {
 	.tw { background: #2980b9; } .tw:hover { background: #3498db; }
 	.gp { background: #c0392b; } .gp:hover { background: #e74c3c; }
 
+#disqus_thread { overflow: hidden; min-height: 108px; display: none; }
+#disqus_thread:after { content: ''; display: block; margin-bottom: -54px; }
+#disqus_loadbtn { text-align:center; }
+#disqus_loadbtn input { padding: 5px; border-radius: 6px; border: 1px solid #000; cursor: pointer; color: #fff; background-color: #345; box-shadow: 3px 3px 0 0 #999; }
+#disqus_loadbtn input:hover { background-color: #567; }
 
 /* ------------------------------------------------------------------------
 -  Footer. -
 -------------------------------------------------------------------------*/
-
 .footer {
 	clear: both;
 	color: #777;
@@ -299,11 +288,10 @@ table {
 /* ------------------------------------------------------------------------
 -  Blockquote, code, pre. -
 -------------------------------------------------------------------------*/
-
 pre, code {
-	font-size: 0.8em;
-	line-height: 1.5em;
-	padding: 0.4em;
+	font-size: 0.80em;
+	line-height: 1.3em;
+	padding: 0.5em;
 }
 
 
@@ -329,7 +317,6 @@ blockquote {
 /* ------------------------------------------------------------------------
 -  Make things responsive. -
 -------------------------------------------------------------------------*/
-
 @media (max-width: 850px) {
 
 	body { font-size: large; }
@@ -351,7 +338,6 @@ blockquote {
 	.social li { display: block; width: 100%; }
 }
 
-
 /* ------------------------------------------------------------------------
 -   Source code highlighting -
 -------------------------------------------------------------------------*/
@@ -361,7 +347,10 @@ blockquote {
 	border: 1px solid #669;
 	border-radius: 10px;
 	box-shadow: 2px 2px 0 0 #99B;
+	padding: 0 0.4em;
 }
+.highlight pre { margin: 0 }
+.highlight code { padding: 0 }
 .highlight .c { color: #999988; font-style: italic } /* Comment */
 .highlight .err { color: #a61717; background-color: #e3d2d2 } /* Error */
 .highlight .k { font-weight: bold } /* Keyword */
