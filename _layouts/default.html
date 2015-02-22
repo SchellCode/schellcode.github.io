@@ -10,7 +10,7 @@
 	<meta name="MobileOptimized" content="320">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
 	<meta http-equiv="cleartype" content="on">
-	<link rel="stylesheet" href="/css/main.css" type='text/css'>
+	<link rel="stylesheet" href="/main.css" type='text/css'>
 	<link href='//fonts.googleapis.com/css?family=Open+Sans:300,400,700' rel='stylesheet' type='text/css'>
 	<link rel="alternate" type="application/rss+xml" title="{{ site.name }}" href="/feed.xml">
 </head>
@@ -22,17 +22,20 @@
 		<div class="module description color-2">
 			{{ site.description }}
 		</div>
+
+{% comment %}
 		<nav class="module main-menu color-4">
 			<a href="/">Home</a>
 			<a>Todo</a>
 			<a>More Pages</a>
 		</nav>
+{% endcomment %}
 
-	<div style="" class="module recent">Recent Posts:
-	{% for post in site.posts limit:20 %}
-		<li><a href="{{ site.url }}{{ post.url }}" title="{{ post.title }}">{{ post.title }}</a></li>
-	{% endfor %}
-	</div>
+		<div style="" class="module recent">Recent Posts:
+{% for post in site.posts limit:20 %}
+			<li><a href="{{ site.url }}{{ post.url }}" title="{{ post.title }}">{{ post.title }}</a></li>
+{% endfor %}
+		</div>
 
 {% comment %}
 		<div class="module links color-3">
