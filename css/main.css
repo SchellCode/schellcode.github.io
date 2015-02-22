@@ -105,10 +105,10 @@ nav {
 	}
 
 .recent {
-	background: #9DA8A9;
+	background: #B5BEBF;
 	text-align: left;
 	padding: 0.2em 0 0.3em 1.5em;
-	font-size: 80%
+	font-size: 80%;
 	line-height: 1.4em;
 }
 
@@ -275,7 +275,7 @@ table {
 	.gp { background: #c0392b; } .gp:hover { background: #e74c3c; }
 
 #disqus_thread { overflow: hidden; min-height: 108px; display: none; }
-#disqus_thread:after { content: ''; display: block; margin-bottom: -54px; }
+#disqus_thread:after { content: ''; display: block; margin-bottom: -60px; }
 #disqus_loadbtn { text-align:center; }
 #disqus_loadbtn input { padding: 5px; border-radius: 6px; border: 1px solid #000; cursor: pointer; color: #fff; background-color: #345; box-shadow: 3px 3px 0 0 #999; }
 #disqus_loadbtn input:hover { background-color: #567; }
