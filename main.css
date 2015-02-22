@@ -275,6 +275,7 @@ table {
 #disqus_loadbtn { text-align:center; }
 #disqus_loadbtn input { padding: 5px; border-radius: 6px; border: 1px solid #000; cursor: pointer; color: #fff; background-color: #345; box-shadow: 3px 3px 0 0 #999; }
 #disqus_loadbtn input:hover { background-color: #567; }
+@media (max-width: 581px) { #disqus_thread:after { margin-bottom: -230px } }
 
 /* ------------------------------------------------------------------------
 -  Footer. -

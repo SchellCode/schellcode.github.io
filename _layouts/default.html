@@ -23,28 +23,28 @@
 			{{ site.description }}
 		</div>
 
-{% comment %}
 		<nav class="module main-menu color-4">
 			<a href="/">Home</a>
+{% comment %}
 			<a>Todo</a>
 			<a>More Pages</a>
-		</nav>
 {% endcomment %}
+		</nav>
+
+		<div class="module links color-3">
+			<a href="https://twitter.com/B_Schelling" title="Profile in Twitter" target="_blank">twitter</a>
+{% comment %}
+			<a href="https://github.com/SchellCode" title="Profile in Github" target="_blank">github</a>
+			<a href="https://plus.google.com/{{ site.google }}" title="Profile in Google+" target="_blank">Google+</a>
+{% endcomment %}
+			<a href="/feed.xml" title="Suscribe to RSS" target="_blank">rss</a>
+		</div>
 
 		<div style="" class="module recent">Recent Posts:
 {% for post in site.posts limit:20 %}
 			<li><a href="{{ site.url }}{{ post.url }}" title="{{ post.title }}">{{ post.title }}</a></li>
 {% endfor %}
 		</div>
-
-{% comment %}
-		<div class="module links color-3">
-			<a href="https://github.com/{{ site.github }}" title="Profile in Github" target="_blank">github</a>
-			<a href="https://twitter.com/{{ site.twitter }}" title="Profile in Twitter" target="_blank">twitter</a>
-			<a href="https://plus.google.com/{{ site.google }}" title="Profile in Google+" target="_blank">Google+</a>
-			<a href="/feed.xml" title="Suscribe to RSS" target="_blank">rss</a>
-		</div>
-{% endcomment %}
 
 	</header>
 
@@ -53,5 +53,10 @@
 	<div class="footer">
 		<span>&copy; Bernhard Schelling</span> &middot; <span>Based on <a href="https://github.com/drvy/minimal-block" target="_blank">minimal-block</a> theme</span>
 	</div>
+
+<script>
+(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)})(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+ga('create', 'UA-60006780-1', 'auto');ga('send', 'pageview');
+</script>
 </body>
 </html>
