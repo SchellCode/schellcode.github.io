@@ -1,8 +1,6 @@
 name: SchellCode
 description: "Code knowhow and stuff I've discovered"
 markdown: redcarpet
-highlighter: pygments
-pygments: true
 paginate: 5
 permalink: /:title
 rss-feed-limit: 10
