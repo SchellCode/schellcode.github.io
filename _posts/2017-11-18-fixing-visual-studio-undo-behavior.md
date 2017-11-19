@@ -41,12 +41,12 @@ Steps
  5. Right-click the method name and select 'Edit Method (C#)...'
 
  6. Remove the whole body of the function, so it looks like this:
-{% highlight c# %}
+~~~ c#
    // Microsoft.VisualStudio.Text.Outlining.UndoManager.Implementation.OutliningUndoManagerFactory
    public void TextViewCreated(IWpfTextView textView)
    {
    }
-{% endhighlight %}
+~~~
 
  7. Make sure you save a backup of the original 'Microsoft.VisualStudio.Platform.VSEditor.dll' somewhere!
 
@@ -57,23 +57,23 @@ Steps
     It does not seem to exist for Visual Studio 2017 on the machine I tested.
 
 10. Finally you need to refresh the extension cache and configuration by running the following two commands in the command prompt:
-    Visual Studio 2017:  
-    - `"C:\Program Files (x86)\Microsoft Visual Studio\2017\Community\Common7\IDE\devenv.exe" /updateconfiguration`
-    - `"C:\Program Files (x86)\Microsoft Visual Studio\2017\Community\Common7\IDE\devenv.exe" /clearcache`
-
-    Visual Studio 2015:  
-    - `"C:\Program Files (x86)\Microsoft Visual Studio 14.0\Common7\IDE\devenv.exe" /updateconfiguration`
-    - `"C:\Program Files (x86)\Microsoft Visual Studio 14.0\Common7\IDE\devenv.exe" /clearcache`
-
-    Visual Studio 2013:  
-    - `"C:\Program Files (x86)\Microsoft Visual Studio 12.0\Common7\IDE\devenv.exe" /updateconfiguration`
-    - `"C:\Program Files (x86)\Microsoft Visual Studio 12.0\Common7\IDE\devenv.exe" /clearcache`
+~~~ bash
+    # For Visual Studio 2017:
+    "C:\Program Files (x86)\Microsoft Visual Studio\2017\Community\Common7\IDE\devenv.exe" /updateconfiguration`
+    "C:\Program Files (x86)\Microsoft Visual Studio\2017\Community\Common7\IDE\devenv.exe" /clearcache`
+    # For Visual Studio 2015:
+    "C:\Program Files (x86)\Microsoft Visual Studio 14.0\Common7\IDE\devenv.exe" /updateconfiguration`
+    "C:\Program Files (x86)\Microsoft Visual Studio 14.0\Common7\IDE\devenv.exe" /clearcache`
+    # For Visual Studio 2013:
+    "C:\Program Files (x86)\Microsoft Visual Studio 12.0\Common7\IDE\devenv.exe" /updateconfiguration`
+    "C:\Program Files (x86)\Microsoft Visual Studio 12.0\Common7\IDE\devenv.exe" /clearcache`
+~~~
 
 11. Launch Visual Studio and enjoy a better experience!
 
 Details
 =======
-What the change in `OutliningUndoManagerFactory`.`TextViewCreated` did was to avoid the
+What the change in `OutliningUndoManagerFactory.TextViewCreated` did was to avoid the
 creation of the `OutliningUndoManager` whose sole purpose is to generate undo transactions
 for outline collapsing and expanding. Without it we get what we want:  
 Outlining still works fine but doesn't interfere with the undo/redo buffer anymore.

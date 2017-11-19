@@ -28,10 +28,10 @@ html, body {
 
 a {
 	text-decoration: none;
-	-webkit-transition: color 0.25s ease-in, background 0.25s ease-in;
-	-moz-transition: color 0.25s ease-in, background 0.25s ease-in;
-	-o-transition: color 0.25s ease-in, background 0.25s ease-in;
-	transition: color 0.25s ease-in, background 0.25s ease-in;
+	-webkit-transition: color 0.15s ease-in, background 0.15s ease-in;
+	-moz-transition: color 0.15s ease-in, background 0.15s ease-in;
+	-o-transition: color 0.15s ease-in, background 0.15s ease-in;
+	transition: color 0.15s ease-in, background 0.15s ease-in;
 }
 
 p { line-height: 1.4; }
@@ -51,7 +51,7 @@ p { line-height: 1.4; }
 }
 
 	.main-content .module {
-		font-size: 0.8em;
+		font-size: 0.7em;
 		margin-right: 1em;
 	}
 
@@ -159,13 +159,16 @@ hr {
 	border: 0;
 	background: #aaa;
 	height: 1px;
-	margin: 50px 0;
+	margin: 25px 0;
 }
 
+h1 { border-bottom: 1px solid #888; margin-bottom: 1em; padding-bottom: 1em; }
+h2 { border-bottom: 1px solid #CCC; padding-top: .5em; }
+
 article a {
-	border-bottom: .125em solid #ccc;
+	border-bottom: .1em solid #ccc;
 	display: inline;
-	padding: 0 0 .15em 0;
+	padding: 0 0 .07em 0;
 }
 
 	article a:hover, article p a:active {
@@ -302,11 +305,11 @@ table {
 -  Blockquote, code, pre. -
 -------------------------------------------------------------------------*/
 pre, code {
-	font-size: 0.80em;
+	font-size: 0.95em;
 	line-height: 1.3em;
-	padding: 0.5em;
+	padding: 0.1em 0.3em;
+	vertical-align: text-bottom;
 }
-
 
 blockquote {
 	font-style: italic;
