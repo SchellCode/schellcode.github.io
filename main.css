@@ -95,22 +95,24 @@ p { line-height: 1.4; }
 .recent {
 	background: #afbabb;
 	text-align: left;
-	padding: 0.2em 0 0.3em 1.5em;
+	padding: 0.2em 0 0.3em 0.5em;
 	font-size: 80%;
 	line-height: 1.4em;
 }
 
-	.recent li {
-		overflow: hidden;
-		text-overflow: ellipsis;
+	.recent ul {
+		margin:0;
+		padding-left: 1.5em;
 		color: #455;
 		white-space: nowrap;
-		width: 98%;
 	}
 
 	.recent li a {
-		position: relative;
-		left: -0.7em;
+		width: 98%;
+		overflow: hidden;
+		text-overflow: ellipsis;
+		float: left;
+		margin-left: -3px;
 	}
 
 .links {
