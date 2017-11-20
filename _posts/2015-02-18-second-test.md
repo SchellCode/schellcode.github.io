@@ -7,7 +7,7 @@ published: false
 ---
 
 Second test
-===========
+-----------
 
 code snippets?
 
@@ -22,7 +22,7 @@ int main()
 
 
 Image
-=====
+-----
 ![Testing](/images/test.png)
 
 <a href="/images/test.png" title="Testing Bottom"><img src="/images/test.png" alt="Testing"><label>This is a test Image!</label></a>
@@ -35,7 +35,7 @@ Hello World! Hello World! Hello World! Hello World! Hello World! Hello World! He
   [IMG1]: /images/test.png "Testing Bottom"
 
 Fieldset
-========
+--------
 
 <fieldset>
 <label>Legend</label>

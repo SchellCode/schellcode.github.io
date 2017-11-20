@@ -6,7 +6,7 @@ date: 2017-11-18 23:00:00
 ---
 
 Preamble
-========
+--------
 Visual Studio has a really annoying behavior regarding its undo/redo functionality.  
 In addition to text edits, it somehow also considers expanding/collapsing code blocks as an edit step.  
 So if you undo a change and then happen to expand a section you cannot redo it anymore.
@@ -15,7 +15,7 @@ expansions this is rather dangerous.
 I have no idea who could have thought that would be a good idea but [it's been in there ever since VS2013](https://visualstudio.uservoice.com/forums/121579-visual-studio-ide/suggestions/3989085-exclude-outlining-operations-from-the-undo-redo-st).
 
 Solution!
-=========
+---------
 The Visual Studio editor is a .NET executable which means it is fairly easy to modify even with just the tools ildasm/ilasm available from Microsoft.  
 But by using the userfriendly debugger and assembly editor [dnSpy](https://github.com/0xd4d/dnSpy) modifications like this becomes a breeze.
 
@@ -24,7 +24,7 @@ So we're going to fix this issue directly in the code which resides inside `Micr
 <img src="/images/visualstudio_undofix.gif" alt="Before / after animation">
 
 Steps
-=====
+-----
  1. Get dnSpy from the [GitHub releases page](https://github.com/0xd4d/dnSpy/releases)  
    You might need to install the [.NET Framework 4.6.2 redistributable](https://www.microsoft.com/net/download/thank-you/net462).  
    You can also try to remove <supportedRuntime.../> tag from 'dnSpy.exe.config' and 'dnSpy-x86.exe.config' to run it anyway.
@@ -72,7 +72,7 @@ public void TextViewCreated(IWpfTextView textView)
 11. Launch Visual Studio and enjoy a better experience!
 
 Details
-=======
+-------
 What the change in `OutliningUndoManagerFactory.TextViewCreated` did was to avoid the
 creation of the `OutliningUndoManager` whose sole purpose is to generate undo transactions
 for outline collapsing and expanding. Without it we get what we want:  
@@ -94,13 +94,13 @@ way which turned out to be the one in `OutliningUndoManagerFactory`. Modifying t
 
 
 Further fixes
-=============
+-------------
 The separate outline feature "Hide Selection" also messes with the undo buffer.
 One could fix that as well by removing the generation of undo transactions inside
 `Outlining.AdhocOutliner` of `Microsoft.VisualStudio.Editor.Implementation.dll`.
 
 Conclusion
-==========
+----------
 It is kind of astonishing to think that an end-user has such an easy and powerful way to customize closed
 source applications, even as large as Visual Studio. And it requiring just a single, fairly small tool
 like [dnSpy](https://github.com/0xd4d/dnSpy) makes it even more interesting. Obviously hats off to

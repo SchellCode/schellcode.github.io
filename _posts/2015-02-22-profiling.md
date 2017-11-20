@@ -6,7 +6,7 @@ date: 2015-02-22 23:00:00
 ---
 
 Preamble
-========
+--------
 
 Profiling native code is certainly an interesting topic. Many people don't do it at all, and some people overdo it (unnecessary micro optimization).
 Also there's the problem of finding good (free) tools which are easy to use.
@@ -19,7 +19,7 @@ The first one I have never seen a good practical solution. It might be acceptabl
 
 
 The easy way
-============
+------------
 
 A really good simple and easy to use free performance profiler for Windows is [Very Sleepy](http://www.codersnotes.com/sleepy).
 It is very lightweight and attaches to any Windows process whose binaries have standard PDB debugging information next to it. One thing to watch out with these external profilers is to activate compiler optimizations and not just run a pure unoptimized debug build. Otherwise the output might show you things that are not relevant in a release build. In some older Visual C++ versions it didn't output PDB along a release build per default so you might need to fiddle with the build settings.
@@ -28,7 +28,7 @@ It is very lightweight and attaches to any Windows process whose binaries have s
 
 
 The real way
-============
+------------
 
 Our actual goal here is to use the visualization tool KCachegrind which relies on profiling information created by the tool Callgrind from the analyzer suite Valgrind. These tools, by the way, are pronounced as "grinned" (rhymes with "tinned") rather than "grined" (rhymes with "find").
 Now the hard/sad part is, Valgrind depends on a lot of Unix stuff and won't run on Windows so we need to go the other way. Now if your code you want to profile is absolutely dependent on Windows you might be out of luck. But in my case I try to keep the OS dependencies as low as possible for most native code I write.
@@ -41,7 +41,7 @@ After finishing the run of your program Callgrind outputs a file named like `cal
 
 
 Visualization!
-==============
+--------------
 
 Let's get to the exciting part! Looking at the profiled code with the Windows build of KCachegrind, called QCachegrind. You can get the portable build over at its [SourceForge project page](http://sourceforge.net/projects/qcachegrindwin/).
 
@@ -62,7 +62,7 @@ The other tabs have lists of callers and callees both only direct connections an
 
 
 Going deeper
-============
+------------
 
 So the last two views I wanted to show off are the source code and machine code views.
 
@@ -75,6 +75,6 @@ The last part is the trickiest. KCachegrind uses the native objdump tool to fetc
 
 
 Conclusion
-==========
+----------
 
 Now this post has gotten quite long even without any actual advice on how to read the profiler output. But I think just seeing the possibilities coming from a good call graph generator and viewer can be quite eye opening. At least it was for me when I started to use this approach to performance profiling. Maybe in a future post I can get into more detail if I can find a good extractable example in my spare time programming code.

@@ -11,7 +11,7 @@ It's actually very simple, as it just runs the PuTTY tool plink to open an SSH c
 This would even be possible in a command line batch file. But if we are trying to fool some other program that relies on a certain command line tool to exist and behave like on a remote host, a batch file might not cut it.
 
 Source!
-=======
+-------
 
 {% highlight c++ %}
 #define _CRT_SECURE_NO_WARNINGS

@@ -185,9 +185,9 @@ article a {
 		max-width: 100%;
 		max-height: 25em;
 		background: #e5efef;
+		box-shadow: 2px 2px 0 0 #c8d2d2;
 		border: 1px solid #b0baba;
 		border-radius: 5px;
-		box-shadow: 2px 2px 0 0 #c8d2d2;
 		padding: .6em .7em;
 		display: block;
 		margin: 0 auto;
@@ -196,11 +196,13 @@ article a {
 	article a img + label {
 		padding: 0.1em 0.5em;
 		background: #e5efef;
+		box-shadow: 2px 2px 0 0 #c8d2d2;
+		border-bottom: 1px solid #b0baba;
 		display: table;
 		position: relative;
-		top: -0.09em;
-		height: 1.1em;
-		line-height: 0.35em;
+		top: -0.1em;
+		height: 1.2em;
+		line-height: 0.5em;
 		color:#212121;
 		margin: auto;
 	}
@@ -362,11 +364,11 @@ blockquote {
 -   Source code highlighting -
 -------------------------------------------------------------------------*/
 div.highlight {
+	overflow-x: auto;
 	background: #e5efef;
-	overflow: auto;
+	box-shadow: 2px 2px 0 0 #c8d2d2;
 	border: 1px solid #b0baba;
 	border-radius: 5px;
-	box-shadow: 2px 2px 0 0 #c8d2d2;
 	padding: .5em .7em;
 	margin:  0.3em 0 1em 0;
 	line-height: 1.0em;
