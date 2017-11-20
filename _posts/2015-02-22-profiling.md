@@ -24,7 +24,7 @@ The easy way
 A really good simple and easy to use free performance profiler for Windows is [Very Sleepy](http://www.codersnotes.com/sleepy).
 It is very lightweight and attaches to any Windows process whose binaries have standard PDB debugging information next to it. One thing to watch out with these external profilers is to activate compiler optimizations and not just run a pure unoptimized debug build. Otherwise the output might show you things that are not relevant in a release build. In some older Visual C++ versions it didn't output PDB along a release build per default so you might need to fiddle with the build settings.
 
-<a href="/images/very_sleepy.png" title="Very Sleepy CS"><img src="/images/very_sleepy.png" alt="Very Sleepy CS"><legend>Very Sleepy CS</legend></a>
+<a href="/images/very_sleepy.png" title="Very Sleepy CS"><img src="/images/very_sleepy.png" alt="Very Sleepy CS"><label>Very Sleepy CS</label></a>
 
 
 The real way
@@ -34,7 +34,7 @@ Our actual goal here is to use the visualization tool KCachegrind which relies o
 Now the hard/sad part is, Valgrind depends on a lot of Unix stuff and won't run on Windows so we need to go the other way. Now if your code you want to profile is absolutely dependent on Windows you might be out of luck. But in my case I try to keep the OS dependencies as low as possible for most native code I write.
 So we're fast forwarding to where we're up and running on Linux (or FreeBSD or MacOSX). For this little exercise I'm even just running Valgrind in a virtual machine. Which does work OK as the interesting numbers are all relative, even though running on real hardware would be preferred.
 
-<a href="/images/running_callgrind.png" title="Running Callgrind"><img src="/images/running_callgrind.png" alt="Running Callgrind"><legend>Running Callgrind</legend></a>
+<a href="/images/running_callgrind.png" title="Running Callgrind"><img src="/images/running_callgrind.png" alt="Running Callgrind"><label>Running Callgrind</label></a>
 For this run I'm adding some `--fn-skip` parameters to remove function calls that are outside of my own code.
 
 After finishing the run of your program Callgrind outputs a file named like `callgrind.out.3176`. The number in the file name is the process id, so it won't override files of multiple runs.
@@ -47,14 +47,14 @@ Let's get to the exciting part! Looking at the profiled code with the Windows bu
 
 Here's how KCachegrind visualizes performance in a callgraph starting from any function:
 
-<a href="/images/qcachegrind_callgraph.png" title="Call Graph visualization in KCachegrind"><img src="/images/qcachegrind_callgraph.png" alt="Call Graph visualization in KCachegrind"><legend>Call Graph visualization in KCachegrind</legend></a>
+<a href="/images/qcachegrind_callgraph.png" title="Call Graph visualization in KCachegrind"><img src="/images/qcachegrind_callgraph.png" alt="Call Graph visualization in KCachegrind"><label>Call Graph visualization in KCachegrind</label></a>
 
 What a beatiful call graph! I activated the two settings Relative Cost and Relative to Parent, so the selected function always shows as 100%, and everything else in the graph relates to that.
 On top of that the graph can be heavily customized. We can set the depth of callers (functions above the selected one) and callees (functions below). Also the minimum cost percentage required to have things show up in the graph at all.
 
 The UI of KCachegrind is a delight to use and to navigate. Any function in any view can be double clicked to switch the context and the panels and panes are customizable. Also it loads and runs very fast.
 
-<a href="/images/qcachegrind_calleemap.png" title="Callee Map in KCachegrind"><img src="/images/qcachegrind_calleemap.png" alt="Callee Map in KCachegrind"><legend>Callee Map in KCachegrind</legend></a>
+<a href="/images/qcachegrind_calleemap.png" title="Callee Map in KCachegrind"><img src="/images/qcachegrind_calleemap.png" alt="Callee Map in KCachegrind"><label>Callee Map in KCachegrind</label></a>
 Whoa what a view! Although I rarely use the Callee Map when analyzing a profile, I love looking at it. Just like the call graph it has a bunch of options accessible by right clicking the view.
 It just shows that there are many ways profiling data can be looked at with KCachegrind.
 
@@ -66,7 +66,7 @@ Going deeper
 
 So the last two views I wanted to show off are the source code and machine code views.
 
-<a href="/images/qcachegrind_code.png" title="Code view in KCachegrind"><img src="/images/qcachegrind_code.png" alt="Code view in KCachegrind"><legend>Code view in KCachegrind</legend></a>
+<a href="/images/qcachegrind_code.png" title="Code view in KCachegrind"><img src="/images/qcachegrind_code.png" alt="Code view in KCachegrind"><label>Code view in KCachegrind</label></a>
 
 Unfortunately there is no code highlighting but the source code view is still very useful. The cool thing with having both source code view and machine code view open is that the cursors of the two views are synchronized. So scrolling through the lines in one view scrolls along in the other one. That makes it very easy to see how the compiler optimized our code, what was inlined or reordered. So helpful!
 

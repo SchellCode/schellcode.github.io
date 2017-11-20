@@ -12,7 +12,7 @@ In addition to text edits, it somehow also considers expanding/collapsing code b
 So if you undo a change and then happen to expand a section you cannot redo it anymore.
 And because searching text or using the go-to-definition function can lead to accidental automatic
 expansions this is rather dangerous.
-I have no idea who thought that would be a good idea but [it's been in there ever since VS2013](https://visualstudio.uservoice.com/forums/121579-visual-studio-ide/suggestions/3989085-exclude-outlining-operations-from-the-undo-redo-st).
+I have no idea who could have thought that would be a good idea but [it's been in there ever since VS2013](https://visualstudio.uservoice.com/forums/121579-visual-studio-ide/suggestions/3989085-exclude-outlining-operations-from-the-undo-redo-st).
 
 Solution!
 =========
@@ -21,7 +21,7 @@ But by using the userfriendly debugger and assembly editor [dnSpy](https://githu
 
 So we're going to fix this issue directly in the code which resides inside `Microsoft.VisualStudio.Platform.VSEditor.dll`!
 
-<div style="text-align:center"><img src="/images/visualstudio_undofix.gif" alt="Before / after animation"></div>
+<img src="/images/visualstudio_undofix.gif" alt="Before / after animation">
 
 Steps
 =====
@@ -31,7 +31,7 @@ Steps
 
  2. Close all Visual Studio editor instances
 
- 3. Open 'Microsoft.VisualStudio.Platform.VSEditor.dll' in dnSpy from one of the places below (depending on Visual Studio version):  
+ 3. Open `Microsoft.VisualStudio.Platform.VSEditor.dll` in dnSpy from one of the places below (depending on Visual Studio version):  
     2017: `C:\Program Files (x86)\Microsoft Visual Studio\2017\Community\Common7\IDE\CommonExtensions\Microsoft\Editor`  
     2015: `C:\Program Files (x86)\Microsoft Visual Studio 14.0\Common7\IDE\CommonExtensions\Microsoft\Editor`  
     2013: `C:\Program Files (x86)\Microsoft Visual Studio 12.0\Common7\IDE\CommonExtensions\Microsoft\Editor`  
@@ -42,10 +42,10 @@ Steps
 
  6. Remove the whole body of the function, so it looks like this:
 ~~~ c#
-   // Microsoft.VisualStudio.Text.Outlining.UndoManager.Implementation.OutliningUndoManagerFactory
-   public void TextViewCreated(IWpfTextView textView)
-   {
-   }
+// Microsoft.VisualStudio.Text.Outlining.UndoManager.Implementation.OutliningUndoManagerFactory
+public void TextViewCreated(IWpfTextView textView)
+{
+}
 ~~~
 
  7. Make sure you save a backup of the original 'Microsoft.VisualStudio.Platform.VSEditor.dll' somewhere!
@@ -57,16 +57,16 @@ Steps
     It does not seem to exist for Visual Studio 2017 on the machine I tested.
 
 10. Finally you need to refresh the extension cache and configuration by running the following two commands in the command prompt:
-~~~ bash
-    # For Visual Studio 2017:
-    "C:\Program Files (x86)\Microsoft Visual Studio\2017\Community\Common7\IDE\devenv.exe" /updateconfiguration`
-    "C:\Program Files (x86)\Microsoft Visual Studio\2017\Community\Common7\IDE\devenv.exe" /clearcache`
-    # For Visual Studio 2015:
-    "C:\Program Files (x86)\Microsoft Visual Studio 14.0\Common7\IDE\devenv.exe" /updateconfiguration`
-    "C:\Program Files (x86)\Microsoft Visual Studio 14.0\Common7\IDE\devenv.exe" /clearcache`
-    # For Visual Studio 2013:
-    "C:\Program Files (x86)\Microsoft Visual Studio 12.0\Common7\IDE\devenv.exe" /updateconfiguration`
-    "C:\Program Files (x86)\Microsoft Visual Studio 12.0\Common7\IDE\devenv.exe" /clearcache`
+~~~ shell
+# For Visual Studio 2017:
+"C:\Program Files (x86)\Microsoft Visual Studio\2017\Community\Common7\IDE\devenv.exe" /updateconfiguration`
+"C:\Program Files (x86)\Microsoft Visual Studio\2017\Community\Common7\IDE\devenv.exe" /clearcache`
+# For Visual Studio 2015:
+"C:\Program Files (x86)\Microsoft Visual Studio 14.0\Common7\IDE\devenv.exe" /updateconfiguration`
+"C:\Program Files (x86)\Microsoft Visual Studio 14.0\Common7\IDE\devenv.exe" /clearcache`
+# For Visual Studio 2013:
+"C:\Program Files (x86)\Microsoft Visual Studio 12.0\Common7\IDE\devenv.exe" /updateconfiguration`
+"C:\Program Files (x86)\Microsoft Visual Studio 12.0\Common7\IDE\devenv.exe" /clearcache`
 ~~~
 
 11. Launch Visual Studio and enjoy a better experience!
