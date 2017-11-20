@@ -5,8 +5,6 @@ permalink: fixing-visual-studio-undo-behavior
 date: 2017-11-18 23:00:00
 ---
 
-Preamble
---------
 Visual Studio has a really annoying behavior regarding its undo/redo functionality.  
 In addition to text edits, it somehow also considers expanding/collapsing code blocks as an edit step.  
 So if you undo a change and then happen to expand a section you cannot redo it anymore.

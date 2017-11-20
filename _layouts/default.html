@@ -10,8 +10,8 @@
 	<meta name="MobileOptimized" content="320">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
 	<meta http-equiv="cleartype" content="on">
-	<link rel="stylesheet" href="/main.css" type='text/css'>
-	<link href='//fonts.googleapis.com/css?family=Open+Sans:300,400,700' rel='stylesheet' type='text/css'>
+	<link rel="stylesheet" href="/main.css?v2" type="text/css">
+	<link href="//fonts.googleapis.com/css?family=Open+Sans:300,400,700" rel="stylesheet" type="text/css">
 	<link rel="alternate" type="application/rss+xml" title="{{ site.name }}" href="/feed.xml">
 </head>
 <body>
@@ -24,23 +24,11 @@
 		</div>
 
 		<div class="module main-menu">
-			<a href="/">Home</a>
+			<a href="/">home</a>
+			<a href="https://github.com/schellingb" title="Profile on GitHub" target="_blank">github</a>
 			<a href="https://twitter.com/B_Schelling" title="Profile in Twitter" target="_blank">twitter</a>
 			<a href="/feed.xml" title="Suscribe to RSS" target="_blank">rss</a>
-{% comment %}
-			<a>Todo</a>
-			<a>More Pages</a>
-{% endcomment %}
 		</div>
-
-{% comment %}
-		<div class="module links">
-			<a href="https://twitter.com/B_Schelling" title="Profile in Twitter" target="_blank">twitter</a>
-			<a href="https://github.com/SchellCode" title="Profile in Github" target="_blank">github</a>
-			<a href="https://plus.google.com/{{ site.google }}" title="Profile in Google+" target="_blank">Google+</a>
-			<a href="/feed.xml" title="Suscribe to RSS" target="_blank">rss</a>
-		</div>
-{% endcomment %}
 
 		<div style="" class="module recent">Recent Posts:
 {% for post in site.posts limit:20 %}
