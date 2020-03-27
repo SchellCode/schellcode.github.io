@@ -40,6 +40,8 @@ For this post, I prepared 7 sample programs which you can check out here:
  6 [Loading a URL](/ClangWasm/LoadUrl/loader.html)        | [Download](https://github.com/SchellCode/schellcode.github.io/releases/download/bin/ClangWasm_LoadUrl.zip) | [Explanation](#demo-6-loading-data-from-url)
  7 [Embedding WASM](/ClangWasm/Embed/output.html)         | [Download](https://github.com/SchellCode/schellcode.github.io/releases/download/bin/ClangWasm_Embed.zip)   | [Explanation](#demo-7-advanced-build-script-with-embedding)
 
+You can also find the code to these on the [GitHub repository](https://github.com/schellingb/ClangWasm).
+
 ## Setup
 For getting builds going, we need 4 things that all are easy to get and require minimal setup.
  - [clang and wasm-ld from LLVM](#getting-llvm)
