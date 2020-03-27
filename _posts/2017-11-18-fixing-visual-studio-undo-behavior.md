@@ -3,6 +3,8 @@ layout: post
 title: "Fixing Visual Studio undo behavior with assembly editing"
 permalink: fixing-visual-studio-undo-behavior
 date: 2017-11-18 23:00:00
+image: /images/visualstudio_undofix.gif
+description: How to change Visual Studio so code outline expansion is not considered an undo/redo step
 ---
 
 Visual Studio has a really annoying behavior regarding its undo/redo functionality.  
