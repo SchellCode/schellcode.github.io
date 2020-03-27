@@ -10,11 +10,13 @@
 	<meta name="MobileOptimized" content="320">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
 	<meta http-equiv="cleartype" content="on">
+	<meta name="title" content="{% if page.title %}{{ page.title }} &middot; {{ site.name }}{% else %}{{ site.name }} &middot; Home{% endif %}">{% if page.description %}
+	<meta name="description" content="{{ page.description }}">{% endif %}
 	<meta name="twitter:card" content="summary_large_image" />
 	<meta name="twitter:site" content="@B_Schelling" />
 	<meta name="twitter:creator" content="@B_Schelling" />
-	<meta name="twitter:title" content="{{ site.name }}: {% if page.title %}{{ page.title }}{% else %}{{ site.description }}{% endif %}">{% if page.description %}
-	<meta name="twitter:title" content="{{ page.description }}">{% endif %}{% if page.image %}
+	<meta name="twitter:title" content="{% if page.title %}{{ page.title }} &middot; {{ site.name }}{% else %}{{ site.name }} &middot; Home{% endif %}">{% if page.description %}
+	<meta name="twitter:description" content="{{ page.description }}">{% endif %}{% if page.image %}
 	<meta name="twitter:image" content="https://schellcode.github.io{{ page.image }}" />{% endif %}
 	<meta property="og:title" content="{{ site.name }}: {% if page.title %}{{ page.title }}{% else %}{{ site.description }}{% endif %}">{% if page.description %}
 	<meta property="og:description" content="{{ page.description }}">{% endif %}{% if page.image %}
