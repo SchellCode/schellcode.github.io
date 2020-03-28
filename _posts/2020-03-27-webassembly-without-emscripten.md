@@ -7,6 +7,8 @@ image: /images/ClangWasm.png
 description: How to get rid of Emscripten and build and compile WebAssembly applications with ease
 ---
 
+How to get rid of Emscripten and build and compile WebAssembly applications with ease.
+
 <img src="/images/ClangWasm.png" alt="Header Image">
 
 # Introduction
@@ -30,15 +32,15 @@ And it's easy!
 # Explanation
 For this post, I prepared 7 sample programs which you can check out here:
 
- Demo (Click to run)                                        | Download                                                                                                   | Explanation
------------------------------------------------------------|------------------------------------------------------------------------------------------------------------|----------------------------------------------------------------
- 1 [Pure C function](/ClangWasm/Basic/loader.html)        | [Download](https://github.com/SchellCode/schellcode.github.io/releases/download/bin/ClangWasm_Basic.zip)   | [Explanation](#demo-1-explaining-the-basic-process)
- 2 [With C Standard Library](/ClangWasm/LibC/loader.html) | [Download](https://github.com/SchellCode/schellcode.github.io/releases/download/bin/ClangWasm_LibC.zip)    | [Explanation](#demo-2-using-the-c-standard-library)
- 3 [With C++](/ClangWasm/Cpp/loader.html)                 | [Download](https://github.com/SchellCode/schellcode.github.io/releases/download/bin/ClangWasm_Cpp.zip)     | [Explanation](#demo-3-using-c-and-the-c-standard-library)
- 4 [WebGL rendering](/ClangWasm/WebGL/loader.html)        | [Download](https://github.com/SchellCode/schellcode.github.io/releases/download/bin/ClangWasm_WebGL.zip)   | [Explanation](#demo-4-webgl-rendering)
- 5 [Audio output](/ClangWasm/Audio/loader.html)           | [Download](https://github.com/SchellCode/schellcode.github.io/releases/download/bin/ClangWasm_Audio.zip)   | [Explanation](#demo-5-audio-output)
- 6 [Loading a URL](/ClangWasm/LoadUrl/loader.html)        | [Download](https://github.com/SchellCode/schellcode.github.io/releases/download/bin/ClangWasm_LoadUrl.zip) | [Explanation](#demo-6-loading-data-from-url)
- 7 [Embedding WASM](/ClangWasm/Embed/output.html)         | [Download](https://github.com/SchellCode/schellcode.github.io/releases/download/bin/ClangWasm_Embed.zip)   | [Explanation](#demo-7-advanced-build-script-with-embedding)
+ Demo (Click to run)                                                                  | Download                                                                                        | Explanation
+--------------------------------------------------------------------------------------|-------------------------------------------------------------------------------------------------|----------------------------------------------------------------
+ 1 [Pure C function](https://schellingb.github.io/ClangWasm/Basic/loader.html)        | [Download](https://github.com/schellingb/ClangWasm/releases/download/bin/ClangWasm_Basic.zip)   | [Explanation](#demo-1-explaining-the-basic-process)
+ 2 [With C Standard Library](https://schellingb.github.io/ClangWasm/LibC/loader.html) | [Download](https://github.com/schellingb/ClangWasm/releases/download/bin/ClangWasm_LibC.zip)    | [Explanation](#demo-2-using-the-c-standard-library)
+ 3 [With C++](https://schellingb.github.io/ClangWasm/Cpp/loader.html)                 | [Download](https://github.com/schellingb/ClangWasm/releases/download/bin/ClangWasm_Cpp.zip)     | [Explanation](#demo-3-using-c-and-the-c-standard-library)
+ 4 [WebGL rendering](https://schellingb.github.io/ClangWasm/WebGL/loader.html)        | [Download](https://github.com/schellingb/ClangWasm/releases/download/bin/ClangWasm_WebGL.zip)   | [Explanation](#demo-4-webgl-rendering)
+ 5 [Audio output](https://schellingb.github.io/ClangWasm/Audio/loader.html)           | [Download](https://github.com/schellingb/ClangWasm/releases/download/bin/ClangWasm_Audio.zip)   | [Explanation](#demo-5-audio-output)
+ 6 [Loading a URL](https://schellingb.github.io/ClangWasm/LoadUrl/loader.html)        | [Download](https://github.com/schellingb/ClangWasm/releases/download/bin/ClangWasm_LoadUrl.zip) | [Explanation](#demo-6-loading-data-from-url)
+ 7 [Embedding WASM](https://schellingb.github.io/ClangWasm/Embed/output.html)         | [Download](https://github.com/schellingb/ClangWasm/releases/download/bin/ClangWasm_Embed.zip)   | [Explanation](#demo-7-advanced-build-script-with-embedding)
 
 You can also find the code to these on the [GitHub repository](https://github.com/schellingb/ClangWasm).
 
@@ -70,10 +72,10 @@ On Linux you can install the Make package and on MacOS it comes as part of Xcode
 # Demos
 
 ## Demo 1: Explaining the Basic Process
-Check out the basic demo [here](/ClangWasm/Basic/loader.html).
+Check out the basic demo [here](https://schellingb.github.io/ClangWasm/Basic/loader.html).
 
 ### Building
-The [basic makefile](/ClangWasm/Basic/Makefile) basically uses 3 commands to build the .wasm file. 
+The [basic makefile](https://schellingb.github.io/ClangWasm/Basic/Makefile) basically uses 3 commands to build the .wasm file. 
 1. Run the clang compiler to compile the source file(s) to .o wasm object file(s)
 2. Run the ld linker to link the .o file(s) to a .wasm file
 3. Run wasm-opt to finalize the interface to support 64-bit types and further size optimizations
@@ -99,7 +101,7 @@ The variables are:
   - `BUILD`: If set to RELEASE the module gets built without debug information and with more optimizations
 
 ### HTML frontend
-The [basic loader.html](/ClangWasm/Basic/loader.html) is the website setting up and loading the JavaScript file below.
+The [basic loader.html](https://schellingb.github.io/ClangWasm/Basic/loader.html) is the website setting up and loading the JavaScript file below.
 
 It has provides a way to log lines of text onto the website and it defines some parameters and functions for the WebAssembly loading.
 {% highlight javascript %}
@@ -110,7 +112,7 @@ started: function() { ... },        //called after the module has been loaded, w
 {% endhighlight %}
 
 ### JavaScript layer
-The [basic loader.js](/ClangWasm/Basic/loader.js) is the JavaScript that loads the .wasm and provides an interface between it and WebAssembly.
+The [basic loader.js](https://schellingb.github.io/ClangWasm/Basic/loader.js) is the JavaScript that loads the .wasm and provides an interface between it and WebAssembly.
 
 For this basic dependency free build it is very small. It first loads the .wasm file through a fetch call (only works through a web server or locally in Firefox).
 Next it quickly goes through the .wasm file to figure out its memory requirements. This basic demo does not do any heap memory allocation/growing but the approach is the same for all demos.
@@ -119,15 +121,15 @@ We set it up ourselves in JavaScript because the later demos want to interact wi
 Finally the wasm module is instantiated and (if it were existing) global C++ constructors and main() is called. Then the html frontend is notified that the module has been loaded.
 
 ## Demo 2: Using the C Standard Library
-Check out the demo using the C Standard Library [here](/ClangWasm/LibC/loader.html).
+Check out the demo using the C Standard Library [here](https://schellingb.github.io/ClangWasm/LibC/loader.html).
 
-To use the C Standard Library in our program, we have to extend the [Makefile](/ClangWasm/LibC/Makefile) and the [JavaScript layer](/ClangWasm/LibC/loader.js) a bit.
+To use the C Standard Library in our program, we have to extend the [Makefile](https://schellingb.github.io/ClangWasm/LibC/Makefile) and the [JavaScript layer](https://schellingb.github.io/ClangWasm/LibC/loader.js) a bit.
 
-At the top of the [Makefile](/ClangWasm/LibC/Makefile) we add a variable SYSTEM_ROOT pointing to the path of the [system libraries](#getting-system-libraries).
+At the top of the [Makefile](https://schellingb.github.io/ClangWasm/LibC/Makefile) we add a variable SYSTEM_ROOT pointing to the path of the [system libraries](#getting-system-libraries).
 Then the new 50 lines at the bottom add a build step that outputs an archive "System.bc" which contains libc, libcxx and a malloc implementation all in one file.
 This System.bc is only created once and to rebuild it one needs to delete it.
 
-Then in the [JavaScript layer](/ClangWasm/LibC/loader.js) we have new functions to interact with the now dynamic memory heap available to the wasm module.
+Then in the [JavaScript layer](https://schellingb.github.io/ClangWasm/LibC/loader.js) we have new functions to interact with the now dynamic memory heap available to the wasm module.
 We have two functions to read and write UTF8 strings from JavaScript. We also fill out a list of functions given to the wasm module by the loader. 
 Simple emulation of stdout text output and even a simple emulated file (with reading and seeking).
 We also pass a function called `sbrk` which is called when C wants to expand the size of the memory heap.
@@ -137,65 +139,65 @@ After instantiating the module and passing over the functions we set up a string
 so the main function receives a proper argc/argv combo.
 
 Because the main() function in the code can now do the text printing on its own with our emulated stdout handling
-the [loader html](/ClangWasm/LibC/loader.html) does nothing after the module has been loaded.
+the [loader html](https://schellingb.github.io/ClangWasm/LibC/loader.html) does nothing after the module has been loaded.
 There is one new line in the html which is `payload: 'UGF5bG9hZCBGaWxl',` which is a base64 encoded file that can be accessed with fopen inside the WebAssembly module.
 
 ## Demo 3: Using C++ and the C++ Standard Library
-Check out the demo using C++ features [here](/ClangWasm/Cpp/loader.html).
+Check out the demo using C++ features [here](https://schellingb.github.io/ClangWasm/Cpp/loader.html).
 
-Besides changing the source file from "main.c" to "main.cpp" the [Makefile](/ClangWasm/Cpp/Makefile) remains unchanged from the previous demo,
+Besides changing the source file from "main.c" to "main.cpp" the [Makefile](https://schellingb.github.io/ClangWasm/Cpp/Makefile) remains unchanged from the previous demo,
 because we already included all the C++ stuff into the combined "System.bc" archive.
 
-The only change is in the [source code](/ClangWasm/Cpp/main.cpp) and there is no further change in the [JavaScript layer](/ClangWasm/Cpp/loader.js) or the [loader html](/ClangWasm/Cpp/loader.html).
+The only change is in the [source code](https://schellingb.github.io/ClangWasm/Cpp/main.cpp) and there is no further change in the [JavaScript layer](https://schellingb.github.io/ClangWasm/Cpp/loader.js) or the [loader html](https://schellingb.github.io/ClangWasm/Cpp/loader.html).
 
 If you're wondering why it's still using printf and not std::cout, I have disabled streams and locale on purpose because it makes the output 180 KB instead 20 KB. Also I prefer the printf syntax.
 
 ## Demo 4: WebGL Rendering
-Check out the demo with WebGL rendering [here](/ClangWasm/WebGL/loader.html).
+Check out the demo with WebGL rendering [here](https://schellingb.github.io/ClangWasm/WebGL/loader.html).
 
-The only change to the [Makefile](/ClangWasm/WebGL/Makefile) is an exported function `WAFNDraw`, which will get called for every frame to render from JavaScript.
+The only change to the [Makefile](https://schellingb.github.io/ClangWasm/WebGL/Makefile) is an exported function `WAFNDraw`, which will get called for every frame to render from JavaScript.
 
-In the [JavaScript layer](/ClangWasm/WebGL/loader.js) we removed the stdout and file emulation (not needed in this demo) but added a rather big WebGL interface.
+In the [JavaScript layer](https://schellingb.github.io/ClangWasm/WebGL/loader.js) we removed the stdout and file emulation (not needed in this demo) but added a rather big WebGL interface.
 This interface basically emulates OpenGL ES 2.0 so in the C/C++ side it can be programmed as a regular OpenGL 2.0 application (without fixed-function rendering).
 To keep the size of the JavaScript file reasonable, some variations of glUniform/glVertexAttrib/glGet and some uncommon functions are not implemented.
 If you need to add a missing function, you can reference the currently implemented functions or the complete implementation in the [Emscripten project](https://github.com/emscripten-core/emscripten/blob/master/src/library_webgl.js).
 
 We also export two special functions to be called from C, `WAJS_SetupCanvas` to setup the WebGL rendering canvas and `WAJS_GetTime` to return the number of milliseconds since setup.
 
-The [source code](/ClangWasm/WebGL/main.cpp) implements a very basic OpenGL 2.0 application to draw a colored triangle with a simple vertex and fragment shader.
+The [source code](https://schellingb.github.io/ClangWasm/WebGL/main.cpp) implements a very basic OpenGL 2.0 application to draw a colored triangle with a simple vertex and fragment shader.
 
 ## Demo 5: Audio Output
-Check out the demo with Audio output [here](/ClangWasm/Audio/loader.html).
+Check out the demo with Audio output [here](https://schellingb.github.io/ClangWasm/Audio/loader.html).
 
-The only change to the [Makefile](/ClangWasm/Audio/Makefile) is an exported function called `WAFNAudio`, which will get called for every block of audio needed from JavaScript.
+The only change to the [Makefile](https://schellingb.github.io/ClangWasm/Audio/Makefile) is an exported function called `WAFNAudio`, which will get called for every block of audio needed from JavaScript.
 
-In the [JavaScript layer](/ClangWasm/Audio/loader.js) there's a new function to be called from C called `WAJS_StartAudio` which starts up a stereo 44100 hz WebAudio output and
+In the [JavaScript layer](https://schellingb.github.io/ClangWasm/Audio/loader.js) there's a new function to be called from C called `WAJS_StartAudio` which starts up a stereo 44100 hz WebAudio output and
 whenever the audio output needs more data, `WAFNAudio` in C is called with a float buffer prepared from JavaScript to be filled by the WebAssembly function.
 
-The [source code](/ClangWasm/Audio/main.cpp) implements a simple sine wave generator.
+The [source code](https://schellingb.github.io/ClangWasm/Audio/main.cpp) implements a simple sine wave generator.
 
 ## Demo 6: Loading Data from URL
-Check out the demo with URL loading [here](/ClangWasm/LoadUrl/loader.html).
+Check out the demo with URL loading [here](https://schellingb.github.io/ClangWasm/LoadUrl/loader.html).
 
-The only change to the [Makefile](/ClangWasm/LoadUrl/Makefile) is an exported function called `WAFNHTTP`, which will get called with the response after the loading of a requested URL finishes.
+The only change to the [Makefile](https://schellingb.github.io/ClangWasm/LoadUrl/Makefile) is an exported function called `WAFNHTTP`, which will get called with the response after the loading of a requested URL finishes.
 
-In the [JavaScript layer](/ClangWasm/LoadUrl/loader.js) we have a function called `WAJS_AsyncLoad` which accepts a URL to be requested by the browser.
+In the [JavaScript layer](https://schellingb.github.io/ClangWasm/LoadUrl/loader.js) we have a function called `WAJS_AsyncLoad` which accepts a URL to be requested by the browser.
 The URL is relative to the loader HTML so it can be just a filename that is stored on the same web server in the same directory.
 Once the request completes (or if there is an error), the exported C function `WAFNHTTP` is called with the result.
 
-The [source code](/ClangWasm/LoadUrl/main.cpp) requests a TXT file and then prints the content once it is loaded.
+The [source code](https://schellingb.github.io/ClangWasm/LoadUrl/main.cpp) requests a TXT file and then prints the content once it is loaded.
 
 ## Demo 7: Advanced Build Script with Embedding
-Check out the result [here](/ClangWasm/Embed/output.html).
+Check out the result [here](https://schellingb.github.io/ClangWasm/Embed/output.html).
 
 This last demo combines all the previous one and adds some extra features to the build script.
 
 It uses Python to embed the .wasm output file inside the JavaScript. Then the JavaScript loader with that embedded .wasm itself is directly embedded in the resulting html.
 This also has the advantage of working in all browsers when opening from a local file while the builds above only run in Firefox without loading via a web server.
 
-At the top of the [Makefile](/ClangWasm/Embed/Makefile) it now requires a variable PYTHON with the full path of the [python executable](#getting-python).
+At the top of the [Makefile](https://schellingb.github.io/ClangWasm/Embed/Makefile) it now requires a variable PYTHON with the full path of the [python executable](#getting-python).
 
-It also uses a [minified JavaScript loader](/ClangWasm/Embed/loader.minified.js) that has been created by pasting the [original file](/ClangWasm/Embed/loader.js) into an [online script minifier tool](https://skalman.github.io/UglifyJS-online/).
+It also uses a [minified JavaScript loader](https://schellingb.github.io/ClangWasm/Embed/loader.minified.js) that has been created by pasting the [original file](https://schellingb.github.io/ClangWasm/Embed/loader.js) into an [online script minifier tool](https://skalman.github.io/UglifyJS-online/).
 
 The result is all contained within a single HTML file and is with some standard library usage, WebGL rendering and audio output only 50 KB.
 
