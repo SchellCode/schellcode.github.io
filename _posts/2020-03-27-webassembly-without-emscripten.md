@@ -11,6 +11,13 @@ How to get rid of Emscripten and build and compile WebAssembly applications with
 
 <img src="/images/ClangWasm.png" alt="Header Image">
 
+# Update
+This post received some good feedback over Twitter and GitHub and lead to the development of WAjic, a new cool
+way to build C/C++ WebAssembly programs. You can read more about the how and why in the [new blog post](/wajic-how-and-why).
+
+I'd place WAjic somewhat between this (calling Clang and writing JavaScript manually) and Emscripten (lot's of dependencies but
+a lot of automation). Please check it out!
+
 # Introduction
 For compiling C/C++ code to WebAssembly to run on the web, Emscripten is the recognized standard to do so.
 Emscripten started out as a proof-of-concept hack to translate compiled C to JavaScript. Later browser vendors
@@ -211,3 +218,6 @@ If you are interested and are looking for more features that can be implemented 
 Ever since I moved from Emscripten to this approach I have not looked back. Faster and streamlined build, smaller output, and full control of the layer between WebAssembly and browser, all that by removing a ton of cruft and required tools and libraries and dependencies.
 
 If you have questions, I can be reached on [Twitter @B_Schelling](https://twitter.com/B_Schelling).
+
+
+There was a somewhat similar article from 2019 from @surma at https://surma.dev/things/c-to-webassembly/ which is a bit more low level and does not attempt to build with the standard library or do something like WebGL or audio output. So my main point was 
