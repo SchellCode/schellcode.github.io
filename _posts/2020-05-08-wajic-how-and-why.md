@@ -12,7 +12,7 @@ where I will describe the steps that brought me to the release of [WAjic](https:
 for "WebAssembly JavaScript Interface Creator". I think it was 4 AM during another night where I couldn't sleep
 when I came up with that name.
 
-<img src="/images/wajic.png" alt="WAjic - WebAssembly JavaScript Interface Creator">
+<img src="/images/wajic.png" alt="WAjic - WebAssembly JavaScript Interface Creator" width="430" height="225">
 
 The last post got some good feedback, especially [the response from Emscripten's author kripken](https://gist.github.com/kripken/cbffda150b4e1583bdad832d070944da).
 
