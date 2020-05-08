@@ -67,7 +67,7 @@ As mentioned in the [README.md](https://github.com/schellingb/wajic) and especia
 
 # Size Showdown
 (html+js+wasm)
-{% highlight %}
+{% highlight shell %}
 Handmade loader: 19,964 bytes
 Emscripten:      11,086 bytes
 WAjic:            7,299 bytes
@@ -79,7 +79,7 @@ Emscripten:      `emcc -Os main_ems.cpp -o main_ems.html -s MINIMAL_RUNTIME -lwe
 WAjic:           `node wajicup.js WebGL.c WebGL.html WebGL.js WebGL.wasm`
 
 ### And one more thing
-{% highlight %}
+{% highlight shell %}
 node wajicup.js WebGL.c -rle -nolog WebGL.html
   [COMPILE] Compiling file: WebGL.c ...
   [LINKING] Linking files: WebGL.c ...
